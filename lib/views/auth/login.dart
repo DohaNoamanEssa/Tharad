@@ -29,7 +29,7 @@ class _LoginViewState extends State<LoginView> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   AppImage(
-                    imageURL: "tharad.png",
+                    imageURL: "tharad_logo.png",
                     topSpace: 100.h,
                     bottomSpace: 100.h,
                   ),

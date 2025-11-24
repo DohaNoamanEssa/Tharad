@@ -32,7 +32,7 @@ class _CreateAccountViewState extends State<CreateAccountView> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   AppImage(
-                    imageURL: "tharad.png",
+                    imageURL: "tharad_logo.png",
                     topSpace: 80.h,
                     bottomSpace: 40.h,
                   ),

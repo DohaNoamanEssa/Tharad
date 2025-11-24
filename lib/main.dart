@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tharad_task/core/logic/helper_methods.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tharad_task/views/auth/login.dart';
-import 'package:tharad_task/views/auth/verify.dart';
-import 'package:tharad_task/views/auth/profile.dart';
+import 'package:tharad_task/views/splash.dart';
 
 void main() {
   runApp( const TharadTaskApp());
@@ -41,7 +39,7 @@ class TharadTaskApp extends StatelessWidget {
             ),
             fontFamily:"Tajawal",
           ),
-          home: VerifyPage(),
+          home: SplashView(),
         );
       },
     );

@@ -69,14 +69,14 @@ class _AppProfileImageState extends State<AppProfileImage> {
 
     )
     :
-      DottedBorder(
-      options: RectDottedBorderOptions(
+    DottedBorder(
+      options: RoundedRectDottedBorderOptions(
         padding: EdgeInsets.all(0.r),
         color: Color(0xff42867B),
         strokeWidth: 3.w,
-        dashPattern: [10, 10],
-      ),
+        dashPattern: [10, 10], radius: Radius.circular(8.r),
 
+      ),
       child: Container(
               height: 87.h,
               width: 350.w,
