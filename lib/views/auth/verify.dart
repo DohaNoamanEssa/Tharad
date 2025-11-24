@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tharad_task/core/logic/helper_methods.dart';
-import 'package:tharad_task/core/ui/app_otp.dart';
-import 'package:tharad_task/core/ui/app_resend_otp.dart';
-import 'package:tharad_task/views/auth/profile.dart';
+import 'package:tharad/core/logic/helper_methods.dart';
+import 'package:tharad/core/ui/app_otp.dart';
+import 'package:tharad/core/ui/app_resend_otp.dart';
+import 'package:tharad/views/auth/profile.dart';
 import '../../core/ui/app_button.dart';
 import '../../core/ui/app_image.dart';
 

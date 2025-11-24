@@ -1,4 +1,4 @@
-name: tharad_task
+name: tharad
 description: "A new Flutter project."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -9,14 +9,12 @@ environment:
   sdk: ^3.9.2
 
 dependencies:
-  animate_do: ^4.2.0
-
-  circular_countdown_timer: ^0.2.4
-  pin_code_fields: ^8.0.1
 
   flutter:
     sdk: flutter
-
+  animate_do: ^4.2.0
+  circular_countdown_timer: ^0.2.4
+  pin_code_fields: ^8.0.1
   cupertino_icons: ^1.0.8
   dotted_border: ^3.1.0
   image_picker: ^1.2.0
@@ -32,6 +30,11 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
 
   assets:
       - assets/images/

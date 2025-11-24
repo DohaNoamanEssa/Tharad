@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:tharad_task/core/logic/helper_methods.dart';
+import 'package:tharad/core/logic/helper_methods.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tharad_task/views/auth/create_new_account.dart';
-import 'package:tharad_task/views/auth/profile.dart';
-import 'package:tharad_task/views/splash.dart';
+import 'package:tharad/views/splash.dart';
 
 void main() {
-  runApp( const TharadTaskApp());
+  runApp( const TharadApp());
 }
 
-class TharadTaskApp extends StatelessWidget {
-  const TharadTaskApp({super.key});
+class TharadApp extends StatelessWidget {
+  const TharadApp({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tharad_task/core/logic/helper_methods.dart';
-import 'package:tharad_task/views/auth/create_new_account.dart';
+import 'package:tharad/core/logic/helper_methods.dart';
+import 'package:tharad/views/auth/create_new_account.dart';
 import '../../core/ui/app_button.dart';
 import '../../core/ui/app_image.dart';
 import '../../core/ui/app_input.dart';
