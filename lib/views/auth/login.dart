@@ -15,95 +15,74 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  late bool isChecked = false;
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(20.0.r),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+          padding: EdgeInsets.all(20.0.r),
+
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 120.h,),
+
+              AppImage(
+                imageURL: "logo.png",
+                bottomSpace: 100.h,
+              ),
+              Text(
+                "تسجيل الدخول",
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+              ),
+              SizedBox(height: 24.h),
+
+              AppInput( bottomSpace: 12.h, title: 'البريد الإلكتروني',),
+
+
+
+              AppInput( isPassword: true, title: 'كلمة المرور',bottomSpace: 8.h,),
+              Row(
                 children: [
-                  AppImage(
-                    imageURL: "tharad_logo.png",
-                    topSpace: 100.h,
-                    bottomSpace: 100.h,
-                  ),
                   Text(
-                    "تسجيل الدخول",
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-                  ),
-                  SizedBox(height: 24.h),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "البريد الإلكتروني",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 10,
-                      ),
+                    "هل نسيت كلمة المرور؟",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Color(0xff42867B),
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff42867B),
                     ),
                   ),
-                  AppInput(topSpace: 6.h, bottomSpace: 12.h),
-
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "كلمة المرور",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 10,
-                      ),
+                  Spacer(),
+                  Text("تذكرني", style: TextStyle(fontSize: 10.sp)),
+                  Checkbox(
+                    value: isChecked,
+                    activeColor: Color(0xff42867B),
+                    side: BorderSide(
+                      color: Color(0xff0D1D1E),
+                      width: 1.5.w,
                     ),
-                  ),
 
-                  AppInput(topSpace: 6.h, isPassword: true),
-                  Row(
-                    children: [
-                      Text(
-                        "هل نسيت كلمة المرور؟",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          decorationColor: Color(0xff42867B),
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff42867B),
-                        ),
-                      ),
-                      Spacer(),
-                      Text("تذكرني", style: TextStyle(fontSize: 10.sp)),
-                      Checkbox(
-                        value: isChecked,
-                        activeColor: Color(0xff42867B),
-                        side: BorderSide(
-                          color: Color(0xff0D1D1E),
-                          width: 1.5.w,
-                        ),
-
-                        onChanged: (bool? newVal) {
-                          isChecked = newVal!;
-                          setState(() {});
-                        },
-                      ),
-                    ],
-                  ),
-                  AppButton(
-                    buttonTitle: "تسجيل الدخول",
-                    topSpace: 40.h,
-                    bottomSpace: 12.h,
-                    onPressed: () {
-                      setState(() {
-                        goTo(VerifyPage());
-                      });
+                    onChanged: (bool? newVal) {
+                      isChecked = newVal!;
+                      setState(() {});
                     },
                   ),
                 ],
               ),
-            ),
+              SizedBox(height: 40,),
+              AppButton(
+                buttonTitle: "تسجيل الدخول",
+                bottomSpace: 12.h,
+                onPressed: () {
+                  goTo(VerifyPage());
+
+                },
+              ),
+            ],
           ),
         ),
       ),

@@ -15,54 +15,48 @@ class VerifyPage extends StatefulWidget {
 }
 
 class _VerifyPageState extends State<VerifyPage> {
-  bool isResend=false;
-  bool timerVisible=true;
-  int timerSeconds=5;
-  late DateTime startTimer=  DateTime.now().add(Duration(seconds: timerSeconds));
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(20.0.r),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  AppImage(
-                    imageURL: "tharad_logo.png",
-                    topSpace: 100.h,
-                    bottomSpace: 100.h,
-                  ),
-                  Text(
-                    "رمز التحقق",
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-                  ),
-                  SizedBox(height: 8.h),
-                  Text(
-                    " لاستكمال فتح حسابك ادخل رمز التحقق المرسل عبر البريد\n الإلكتروني",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 12.sp,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 40.h),
-                AppVerifyCode(),
-                AppResendOTP(),
+          padding: EdgeInsets.all(20.0.r),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 120.h,),
 
-                  AppButton(
-                    buttonTitle: "المتابعة",
-                    onPressed: () {
-                      goTo(ProfileView());
-                      setState(() {});
-                    },
-                  ),
-                ],
+              AppImage(
+                imageURL: "logo.png",
+                bottomSpace: 116.h,
               ),
-            ),
+              Text(
+                "رمز التحقق",
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+              ),
+              SizedBox(height: 8.h),
+              Text(
+                " لاستكمال فتح حسابك ادخل رمز التحقق المرسل عبر البريد\n الإلكتروني",
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 12.sp,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(height: 40.h),
+            AppVerifyCode(),
+            AppResendOTP(),
+              SizedBox(height: 40.h),
+
+              AppButton(
+                buttonTitle: "المتابعة",
+                onPressed: () {
+                  goTo(ProfileView());
+                },
+              ),
+            ],
           ),
         ),
       ),

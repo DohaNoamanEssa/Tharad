@@ -16,7 +16,6 @@ class CreateAccountView extends StatefulWidget {
 }
 
 class _CreateAccountViewState extends State<CreateAccountView> {
-  late bool isChecked = false;
 
 
 
@@ -25,98 +24,45 @@ class _CreateAccountViewState extends State<CreateAccountView> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(20.0.r),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  AppImage(
-                    imageURL: "tharad_logo.png",
-                    topSpace: 80.h,
-                    bottomSpace: 40.h,
-                  ),
-                  Text(
-                    "إنشاء حساب جديد",
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
-                  ),
-                  SizedBox(height: 24.h),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "الصورة الشخصية",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 10,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 6.h),
-                  AppProfileImage(),
-
-                  SizedBox(height: 12.h),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "اسم المستخدم",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 10,
-                      ),
-                    ),
-                  ),
-                  AppInput(topSpace: 6.h, bottomSpace: 12.h),
-
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "البريد الإلكتروني",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 10,
-                      ),
-                    ),
-                  ),
-                  AppInput(bottomSpace: 12.h, topSpace: 6.h),
-
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "كلمة المرور",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 10,
-                      ),
-                    ),
-                  ),
-                  AppInput(topSpace: 6.h, isPassword: true, bottomSpace: 12.h),
-
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "تأكيد كلمة المرور",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 10,
-                      ),
-                    ),
-                  ),
-                  AppInput(topSpace: 6.h, isPassword: true, bottomSpace: 40.h),
-
-                  AppButton(
-                    buttonTitle: "إنشاء حساب جديد",
-                    topSpace: 40.h,
-                    bottomSpace: 12.h,
-                    onPressed: (){
-                      goTo(ProfileView());
-                      setState(() {
-
-                      });
-                    },
-                  ),
-                ],
+          padding: EdgeInsets.all(20.0.r),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 80.h,),
+              AppImage(
+                imageURL: "logo.png",
+                bottomSpace: 40.h,
               ),
-            ),
+              Text(
+                "إنشاء حساب جديد",
+                style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+              ),
+              SizedBox(height: 24.h),
+
+              AppProfileImage(),
+
+              SizedBox(height: 12.h),
+
+              AppInput(title: 'اسم المستخدم', bottomSpace: 12.h),
+
+
+              AppInput(bottomSpace: 12.h, title: 'البريد الإلكتروني',),
+
+
+              AppInput( isPassword: true, bottomSpace: 12.h, title: 'كلمة المرور',),
+
+
+              AppInput( isPassword: true, bottomSpace: 40.h, title: 'تأكيد كلمة المرور',),
+
+              AppButton(
+                buttonTitle: "إنشاء حساب جديد",
+                bottomSpace: 12.h,
+                onPressed: (){
+                  goTo(ProfileView());
+
+                },
+              ),
+            ],
           ),
         ),
       ),

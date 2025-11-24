@@ -16,9 +16,8 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
-  final linearGradientColors = [Color(0xff5CC7A3), Color(0xff265355)];
 
-  var saveData=false;
+  bool saveData=false;
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +42,9 @@ class _ProfileViewState extends State<ProfileView> {
           height: 300.h,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: linearGradientColors,
-              begin: Alignment.bottomLeft,
-              end: Alignment.topRight,
+              colors: [Color(0xff5CC7A3), Color(0xff265355)],
+              begin: AlignmentDirectional.bottomStart,
+              end: AlignmentDirectional.topEnd,
             ),
           ),
         ),
@@ -53,103 +52,62 @@ class _ProfileViewState extends State<ProfileView> {
       ),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(20.w, 32.h, 20.w, 32.h),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(16.r),
-                  topLeft: Radius.circular(16.r),
+          padding: EdgeInsets.fromLTRB(20.w, 32.h, 20.w, 32.h),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadiusDirectional.horizontal(
+                start: Radius.circular(16.r),
+                end: Radius.circular(16.r),
+
+              ),
+            ),
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+
+                AppInput(title: 'اسم المستخدم', bottomSpace: 12.h),
+
+
+                AppInput(bottomSpace: 12.h, title: 'البريد الإلكتروني', ),
+
+                SizedBox(height: 6.h),
+                AppProfileImage(),
+
+                SizedBox(height: 12.h),
+
+
+                AppInput(title: 'كلمة المرور القديمة', isPassword: true, bottomSpace: 12.h),
+
+                AppInput(title: 'كلمة المرور الجديدة', isPassword: true, bottomSpace: 12.h),
+
+                AppInput(title: 'تأكيد كلمة المرور الجديدة', isPassword: true, bottomSpace: 54.h),
+
+                AppButton(
+                  buttonTitle: "حفظ التغيرات",
+                  bottomSpace: 12.h,
+                  onPressed: (){
+                    setState(() {
+                      saveData=true;
+                    });
+                  },
                 ),
-              ),
+                TextButton(
+                  child: Text( "تسجيل الخروج",
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12.sp,
+                      color: Color(0xffFF1020),
+                    ),),
+                  onPressed: () {
+                    goTo(CreateAccountView());
 
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "اسم المستخدم",
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
-                    ),
-                  ),
-                  AppInput(topSpace: 6.h, bottomSpace: 12.h),
-
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "البريد الإلكتروني",
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
-                    ),
-                  ),
-                  AppInput(bottomSpace: 12.h, topSpace: 6.h),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "الصورة الشخصية",
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
-                    ),
-                  ),
-                  SizedBox(height: 6.h),
-                  AppProfileImage(),
-
-                  SizedBox(height: 12.h),
-
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "كلمة المرور القديمة",
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
-                    ),
-                  ),
-                  AppInput(topSpace: 6.h, isPassword: true, bottomSpace: 12.h),
-
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "كلمة المرور الجديدة",
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
-                    ),
-                  ),
-                  AppInput(topSpace: 6.h, isPassword: true, bottomSpace: 40.h),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "تأكيد كلمة المرور الجديدة",
-                      style: TextStyle(fontWeight: FontWeight.w500, fontSize: 10),
-                    ),
-                  ),
-                  AppInput(topSpace: 6.h, isPassword: true, bottomSpace: 54.h),
-
-                  AppButton(
-                    buttonTitle: "حفظ التغيرات",
-                    topSpace: 40.h,
-                    bottomSpace: 12.h,
-                    onPressed: (){
-                      setState(() {
-                        saveData=true;
-                      });
-                    },
-                  ),
-                  TextButton(
-                    child: Text( "تسجيل الخروج",
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12.sp,
-                        color: Color(0xffFF1020),
-                      ),),
-                    onPressed: () {
-                      goTo(CreateAccountView());
-                      setState(() {
-
-                      });
-                    },
+                  },
 
 
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -157,7 +115,7 @@ class _ProfileViewState extends State<ProfileView> {
       ),
       bottomNavigationBar:saveData? Container(
         alignment: AlignmentDirectional.centerEnd,
-        padding: EdgeInsets.fromLTRB(25, 25,25, 25),
+        padding: EdgeInsets.all(20.r),
         width: double.infinity,
         height: 65.h,
         color: Color(0xff42867B),

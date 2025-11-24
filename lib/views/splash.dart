@@ -26,24 +26,24 @@ class _SplashViewState extends State<SplashView> {
 
     return Scaffold(
       body: Center(child:  Stack(
-        alignment: Alignment.center,
+        alignment: AlignmentDirectional.center,
         children: [
           if (!showFinalLogo) ...[
             FadeInDown(
               duration: const Duration(milliseconds: 800),
-              child: AppImage(imageURL: "tharad_logo.png"),
+              child: AppImage(imageURL: "logo.png"),
             ),
             FadeInUp(
               duration: const Duration(milliseconds: 800),
-              child: AppImage(imageURL: "tharad_logo.png"),
+              child: AppImage(imageURL: "logo.png"),
             ),
             FadeInLeft(
               duration: const Duration(milliseconds: 800),
-              child: AppImage(imageURL: "tharad_logo.png"),
+              child: AppImage(imageURL: "logo.png"),
             ),
             FadeInRight(
               duration: const Duration(milliseconds: 800),
-              child: AppImage(imageURL: "tharad_logo.png"),
+              child: AppImage(imageURL: "logo.png"),
             ),
           ],
 
@@ -51,7 +51,7 @@ class _SplashViewState extends State<SplashView> {
             ZoomIn(
               duration: const Duration(milliseconds: 700),
               child: AppImage(
-                imageURL: "tharad_logo.png",
+                imageURL: "logo.png",
                 width: 300.w,
                 height: 300.h,
               ),

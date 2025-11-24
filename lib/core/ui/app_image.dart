@@ -7,7 +7,6 @@ class AppImage extends StatelessWidget {
   final Color? color;
   final BoxFit fit;
   final double? bottomSpace;
-  final double? topSpace;
 
   const AppImage({
     super.key,
@@ -16,13 +15,12 @@ class AppImage extends StatelessWidget {
     this.width,
     this.color, this.fit=BoxFit.scaleDown,
     this.bottomSpace,
-    this.topSpace,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: bottomSpace ?? 0,top: topSpace ?? 0),
+      padding: EdgeInsets.only(bottom: bottomSpace ?? 0),
       child: Builder(builder: (context){
         if (imageURL.toLowerCase().endsWith("svg")) {
           return SvgPicture.asset(

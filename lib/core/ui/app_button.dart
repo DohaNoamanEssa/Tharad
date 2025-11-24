@@ -5,24 +5,21 @@ class AppButton extends StatelessWidget {
   final String buttonTitle;
   final VoidCallback? onPressed;
   final double bottomSpace;
-  final double topSpace;
 
-  AppButton({super.key, required this.buttonTitle, this.onPressed,this.bottomSpace=0,this.topSpace=0});
+  AppButton({super.key, required this.buttonTitle, this.onPressed,this.bottomSpace=0});
 
   final linearGradientColors = [Color(0xff5CC7A3), Color(0xff265355)];
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: topSpace ,bottom: bottomSpace),
+      padding: EdgeInsets.only( bottom: bottomSpace),
       child: Container(
-        height: 48.h,
-        width: 350.w,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: linearGradientColors,
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
+            begin: AlignmentDirectional.bottomStart,
+            end: AlignmentDirectional.topEnd,
           ),
           borderRadius: BorderRadius.circular(8.r),
 
